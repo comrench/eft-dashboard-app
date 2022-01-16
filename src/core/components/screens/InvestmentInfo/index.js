@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { getDashboard } from '../../../actions';
+import { getDashboard, saveETFs } from '../../../actions';
 
 const InvestmentInfo = (props) => {
   return (
@@ -26,7 +26,7 @@ const InvestmentInfo = (props) => {
           variant='primary'
           onClick={() => {
             console.log('button clicked');
-            // props.updateStructure({});
+            props.saveETFData({ symbol: 'BTCC' });
           }}
         >
           Submit the data to server and generate the CSV
@@ -42,6 +42,7 @@ const mapStateToProps = ({ dashboard }) => {
 
 const mapDispatchToProps = {
   loadETFData: getDashboard,
+  saveETFData: saveETFs,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(InvestmentInfo);

@@ -5,3 +5,11 @@ export const getDashboard = (newInput) => {
     newInput,
   };
 };
+
+export const saveETFs = (newInput) => {
+  console.log('in action saveETF');
+  return {
+    type: 'SAVE_STOCK',
+    newInput,
+  };
+};
