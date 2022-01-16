@@ -1,12 +1,8 @@
 import { combineReducers } from 'redux';
-// import { persReducer } from "./personalReducer";
-// import { propReducer } from "./propertyReducer";
-// import { empReducer } from "./employmentReducer";
+import { dashReducer } from './dashboardReducer';
 
 const rootReducer = combineReducers({
-  // personal: persReducer,
-  // property: propReducer,
-  // employment: empReducer,
+  dashboard: dashReducer,
 });
 
 export default rootReducer;
