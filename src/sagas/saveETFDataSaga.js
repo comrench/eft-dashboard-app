@@ -4,10 +4,10 @@ import { saveETFDataToApi } from './serverApi';
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* saveETFData(action) {
   console.log('saveETFData saga');
-  const { symbol } = action.newInput;
+  const input = action.newInput;
 
   try {
-    const result = yield call(saveETFDataToApi, { symbol });
+    const result = yield call(saveETFDataToApi, input);
 
     if (result) {
       console.log('successfully fetched the details');
